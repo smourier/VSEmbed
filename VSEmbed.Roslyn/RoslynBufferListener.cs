@@ -31,7 +31,7 @@ namespace VSEmbed.Roslyn {
 		};
 		public async void SubjectBuffersConnected(IWpfTextView textView, ConnectionReason reason, Collection<ITextBuffer> subjectBuffers) {
 			// Give the code that created the buffer a chance to attach its own workspace
-			await Task.Yield();
+			await System.Threading.Tasks.Task.Yield();
 
 			foreach (var buffer in subjectBuffers) {
 				CreateWorkspace(buffer);
